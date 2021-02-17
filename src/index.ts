@@ -1,4 +1,4 @@
-import "./best";
+import "./inside/best";
 
 const best = [
   "best",

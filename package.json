@@ -1,10 +1,19 @@
 {
   "name": "ts-boilerplate",
+  "author": "Kamil Alekber <kamil.alekber@gmail.com>",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamil-alekber/ts-boilerplate"
+  },
+  "keywords": [
+    "basic setup",
+    "typescript-boilerplate"
+  ],
   "scripts": {
-    "lint": "node_modules/.bin/eslint src",
+    "lint": "node_modules/.bin/eslint --fix src",
     "format": "node_modules/.bin/prettier --write src",
     "style": "yarn lint && yarn format",
     "ts": "node_modules/.bin/tsc --build tsconfig.json",
@@ -12,15 +21,15 @@
     "build": "yarn ts && yarn babel",
     "watch": "node_modules/.bin/nodemon",
     "start": "node dist",
-    "postinstall": "husky install",
+    "postinstall": "is-ci || husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
   },
   "dependencies": {
-    "express": "4.17.1"
+    "express": "4.17.1",
+    "is-ci": "2.0.0"
   },
   "devDependencies": {
-    "pinst": "2.1.4",
     "@babel/cli": "7.12.16",
     "@babel/core": "7.12.16",
     "@babel/plugin-transform-modules-commonjs": "7.12.13",
@@ -32,7 +41,9 @@
     "babel-preset-minify": "0.5.1",
     "eslint": "7.20.0",
     "husky": "5.0.9",
+    "lint-staged": "10.5.4",
     "nodemon": "2.0.7",
+    "pinst": "2.1.4",
     "prettier": "2.2.1",
     "ts-node": "9.1.1",
     "typescript": "4.1.5",
