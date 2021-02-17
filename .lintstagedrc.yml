@@ -1,2 +1,2 @@
 "src/**/*.{ts,tsx}": node_modules/.bin/eslint --fix"
-# "src/**/*.{js,jsx,ts,tsx,md,html,css}": "node_modules/.bin/prettier --write"
+"src/**/*.{js,jsx,ts,tsx,md,html,css}": "node_modules/.bin/prettier --write"
