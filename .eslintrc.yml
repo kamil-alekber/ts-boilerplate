@@ -1,16 +1,18 @@
 parser: "@typescript-eslint/parser"
+
 parserOptions:
+  project: ./tsconfig.json
   ecmaVersion: 6
   ecmaFeatures:
     modules: true
+
 # where the code is going to be executed
 env:
   node: true
-
 extends:
   - eslint:recommended
   - "plugin:@typescript-eslint/recommended"
-  - recommended-requiring-type-checking
+  - "plugin:@typescript-eslint/recommended-requiring-type-checking"
 
 rules:
   comma-dangle:
