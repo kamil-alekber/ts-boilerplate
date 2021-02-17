@@ -11,19 +11,27 @@
     "babel": "node ./scripts/yaml --file=.babelrc.yml --out=.babelrc --show && ./node_modules/.bin/babel -d dist -x=[.es6,.js,.es,.jsx,.mjs,.ts,.tsx] src && rm -rf .babelrc",
     "build": "yarn ts && yarn babel",
     "watch": "node_modules/.bin/nodemon",
-    "start": "node dist"
+    "start": "node dist",
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "4.17.1"
+  },
   "devDependencies": {
+    "pinst": "2.1.4",
     "@babel/cli": "7.12.16",
     "@babel/core": "7.12.16",
     "@babel/plugin-transform-modules-commonjs": "7.12.13",
     "@babel/preset-env": "7.12.16",
     "@babel/preset-typescript": "7.12.16",
+    "@types/express": "4.17.11",
     "@typescript-eslint/eslint-plugin": "4.15.1",
     "@typescript-eslint/parser": "4.15.1",
     "babel-preset-minify": "0.5.1",
     "eslint": "7.20.0",
+    "husky": "5.0.9",
     "nodemon": "2.0.7",
     "prettier": "2.2.1",
     "ts-node": "9.1.1",
