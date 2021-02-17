@@ -4,10 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "ts": "node_modules/.bin/tsc --build tsconfig.json",
     "lint": "node_modules/.bin/eslint src",
+    "format": "node_modules/.bin/prettier --write src",
+    "style": "yarn lint && yarn format",
+    "ts": "node_modules/.bin/tsc --build tsconfig.json",
     "babel": "node ./scripts/yaml --file=.babelrc.yml --out=.babelrc --show && ./node_modules/.bin/babel -d dist -x=[.es6,.js,.es,.jsx,.mjs,.ts,.tsx] src && rm -rf .babelrc",
-    "build": "yarn lint && yarn ts && yarn babel",
+    "build": "yarn ts && yarn babel",
     "watch": "node_modules/.bin/nodemon",
     "start": "node dist"
   },
@@ -23,6 +25,7 @@
     "babel-preset-minify": "0.5.1",
     "eslint": "7.20.0",
     "nodemon": "2.0.7",
+    "prettier": "2.2.1",
     "ts-node": "9.1.1",
     "typescript": "4.1.5",
     "yaml": "1.10.0"
