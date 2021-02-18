@@ -13,6 +13,8 @@
     "typescript-boilerplate"
   ],
   "scripts": {
+    "test": "mocha -r ts-node/register 'src/**/__tests__/**/*.ts'",
+    "test-watch": "node_modules/.bin/nodemon --config test.nodemon.json",
     "lint": "node_modules/.bin/eslint --fix src",
     "format": "node_modules/.bin/prettier --write src",
     "style": "yarn lint && yarn format",
@@ -38,12 +40,14 @@
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
     "@types/express": "4.17.11",
+    "@types/mocha": "8.2.1",
     "@typescript-eslint/eslint-plugin": "4.15.1",
     "@typescript-eslint/parser": "4.15.1",
     "babel-preset-minify": "0.5.1",
     "eslint": "7.20.0",
     "husky": "5.0.9",
     "lint-staged": "10.5.4",
+    "mocha": "8.3.0",
     "nodemon": "2.0.7",
     "pinst": "2.1.4",
     "prettier": "2.2.1",

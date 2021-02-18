@@ -1,0 +1,5 @@
+{
+  "watch": ["src/**/__tests__/**/*.ts"],
+  "ext": "ts",
+  "exec": "node_modules/.bin/mocha -r ts-node/register 'src/**/__tests__/**/*.ts'"
+}
